@@ -1,0 +1,1 @@
+package com.nepu.transport.entity.farecap;
