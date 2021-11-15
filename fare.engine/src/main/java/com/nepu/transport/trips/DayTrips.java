@@ -28,25 +28,11 @@ public class DayTrips {
 		this.dayOfWeek = dayOfWeek;
 	}
 
-	public int getDayOfWeek() {
-		return dayOfWeek;
-	}
-
-	public void setDayOfWeek(int dayOfWeek) {
-		this.dayOfWeek = dayOfWeek;
-	}
-
 	public List<Trip> getTrips() {
 		if(trips == null) {
 			trips = new ArrayList<>();
 		}
 		return trips;
 	}
-
-	public void setTrips(List<Trip> trips) {
-		this.trips = trips;
-	}
-	
-	
 
 }

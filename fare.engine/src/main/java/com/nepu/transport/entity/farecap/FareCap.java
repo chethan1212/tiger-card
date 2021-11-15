@@ -39,30 +39,6 @@ public class FareCap {
 		this.fareCap = fareCap;
 	}
 
-	public int getFromZone() {
-		return fromZone;
-	}
-
-	public void setFromZone(int fromZone) {
-		this.fromZone = fromZone;
-	}
-
-	public int getToZone() {
-		return toZone;
-	}
-
-	public void setToZone(int toZone) {
-		this.toZone = toZone;
-	}
-
-	public String getCapCategory() {
-		return capCategory;
-	}
-
-	public void setCapCategory(String capCategory) {
-		this.capCategory = capCategory;
-	}
-
 	public int getFareCap() {
 		return fareCap;
 	}

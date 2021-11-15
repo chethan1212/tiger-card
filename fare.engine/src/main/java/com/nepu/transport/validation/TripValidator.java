@@ -22,11 +22,11 @@ public class TripValidator implements validator {
 		}
 		List<String> errors = new ArrayList<String>();
 		for (Trip trip : trips) {
-			if (trip.getFromZone() != 1 || trip.getFromZone() != 2 || trip.getToZone() != 1 || trip.getToZone() != 2) {
+			if (!(trip.getFromZone() == 1 || trip.getFromZone() == 2 || trip.getToZone() == 1 || trip.getToZone() == 2)) {
 				errors.add(Constants.TCTZ001);
 			}
 			if(trip.getStartDateTime() == null || trip.getStartDateTime().trim() == "") {
-				
+				errors.add(Constants.TCTD001);
 			}else {
 				
 				DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
@@ -34,7 +34,7 @@ public class TripValidator implements validator {
 		        try {
 		            sdf.parse(trip.getStartDateTime());
 		        } catch (ParseException e) {
-		        	errors.add(Constants.TCTZ001);
+		        	errors.add(Constants.TCTD001);
 		        }
 			}
 		}

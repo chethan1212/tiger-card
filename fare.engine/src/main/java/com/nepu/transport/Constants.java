@@ -7,6 +7,6 @@ public class Constants {
 	public static final String APPLICATION_ERR = "APPLICATION_ERR";
 	
 	public static final String TCTZ001 = "Input Zone invalid";
-	public static final String TCTD001 = "Input Date format invalid";
+	public static final String TCTD001 = "Input Date for trip missing or invalid";
 
 }

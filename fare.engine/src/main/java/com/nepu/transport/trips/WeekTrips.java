@@ -29,14 +29,6 @@ public class WeekTrips {
 		this.weekOfYear = weekOfYear;
 	}
 
-	public int getWeekOfYear() {
-		return weekOfYear;
-	}
-
-	public void setWeekOfYear(int weekOfYear) {
-		this.weekOfYear = weekOfYear;
-	}
-
 	public long getWeekTotalFare() {
 		return weekTotalFare;
 	}
@@ -50,10 +42,6 @@ public class WeekTrips {
 			dayTrips = new TreeMap<>();
 		}
 		return dayTrips;
-	}
-
-	public void setDayTrips(Map<Integer, DayTrips> dayTrips) {
-		this.dayTrips = dayTrips;
 	}
 
 }

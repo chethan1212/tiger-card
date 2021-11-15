@@ -15,7 +15,7 @@ public class Trip {
 	/*
 	 * To be used when persisting this to DB.
 	 */
-	private long tripId;
+	// private long tripId;
 	
 	private int fromZone;
 	
@@ -69,57 +69,30 @@ public class Trip {
 		return Integer.parseInt(format.format(date));
 	}
 	
-	public int getActualFare() {
-		return actualFare;
-	}
 
 	public void setActualFare(int actualFare) {
 		this.actualFare = actualFare;
-	}
-
-	public int getStandardfare() {
-		return standardfare;
 	}
 
 	public void setStandardfare(int standardfare) {
 		this.standardfare = standardfare;
 	}
 
-	public long getTripId() {
-		return tripId;
-	}
-
-	public void setTripId(long tripId) {
-		this.tripId = tripId;
-	}
-
 	public int getFromZone() {
 		return fromZone;
-	}
-
-	public void setFromZone(int fromZone) {
-		this.fromZone = fromZone;
 	}
 
 	public int getToZone() {
 		return toZone;
 	}
 
-	public void setToZone(int toZone) {
-		this.toZone = toZone;
-	}
-
 	public String getStartDateTime() {
 		return startDateTime;
 	}
 
-	public void setStartDateTime(String startTime) {
-		this.startDateTime = startTime;
-	}
-
 	@Override
 	public String toString() {
-		return "Trip [tripId=" + tripId + ", fromZone=" + fromZone + ", toZone=" + toZone + ", startDateTime="
+		return "Trip [fromZone=" + fromZone + ", toZone=" + toZone + ", startDateTime="
 				+ startDateTime + ", actualFare=" + actualFare + ", standardfare=" + standardfare + "]";
 	}
 
