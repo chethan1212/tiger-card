@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.nepu.transport.Constants;
 import com.nepu.transport.trips.TotalTripsInfo;
 import com.nepu.transport.trips.Trip;
+import com.nepu.transport.validation.TripValidator;
 
 /**
  * Dummy test controller wrote to ease the testing of scenarios. Again nothing to see here!!. Move on.
@@ -24,12 +26,22 @@ public class FareController {
 
 	@Autowired
 	private FareEngine fareEngine;
+	
+	@Autowired
+	private TripValidator tripValidator;
 
 	@RequestMapping(method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	String calcualteFare(@RequestBody List<Trip> trips) throws JsonProcessingException {
-		TotalTripsInfo totalTripsInfo = fareEngine.calculate(trips);
+		ActionResult actionResult = null;
 		ObjectMapper mapper = new ObjectMapper();
-		String result = mapper.writeValueAsString(totalTripsInfo);
+		List<String> errors =  tripValidator.validate(trips);
+		if(errors != null) {
+			TotalTripsInfo totalTripsInfo = fareEngine.calculate(trips);
+			actionResult = new ActionResult(Constants.SUCCESS, totalTripsInfo, null);
+		}else {
+			actionResult = new ActionResult(Constants.VALIDATION_ERR, null, errors);
+		}
+		String result = mapper.writeValueAsString(actionResult);
 		return result;
 	}
 
